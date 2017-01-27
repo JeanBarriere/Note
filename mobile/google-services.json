@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "913463725774",
+    "project_id": "app-note"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913463725774:android:6340a554ef48a799",
+        "android_client_info": {
+          "package_name": "fr.jean_barriere.note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913463725774-0ghl2cu0b7aadu41vetp2195u3p1mcm9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.jean_barriere.note",
+            "certificate_hash": "010A4F79F54EC2EE00D32B8114D0CD78D3E95D9D"
+          }
+        },
+        {
+          "client_id": "913463725774-clv8o6ilfm8ipp01k1amq5rbcb0h8mnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2TaSd8aeUx5vEo5SH1hQYmxfdXR6j0sE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

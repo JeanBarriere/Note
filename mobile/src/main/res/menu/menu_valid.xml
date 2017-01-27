@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_addnote_alarm_add"
+        android:icon="@drawable/ic_action_alarm_add"
+        android:orderInCategory="100"
+        android:title="@string/alarm_add"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_addnote_alarm_delete"
+        android:icon="@drawable/ic_action_alarm_delete"
+        android:orderInCategory="100"
+        android:visible="false"
+        android:title="@string/alarm_delete"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_addnote_valid"
+        android:icon="@drawable/ic_action_valid"
+        android:orderInCategory="100"
+        android:title="@string/abc_action_mode_done"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Note</string>
+    <string name="space">espace</string>
+    <string name="resources_title">Ressources utilisées</string>
+    <string name="play_services_error">Erreur de service</string>
+    <string name="options">Options</string>
+    <string name="open_source_title">Licences open source</string>
+    <string name="no_data_available">Pas de Notes</string>
+    <string name="delete_item">Supprimer</string>
+    <string name="close">fermer</string>
+    <string name="url_unsplash">Image du jour : <a href="https://source.unsplash.com/">Unsplash</a></string>
+    <string name="alarm_delete">Supprimer une alarme</string>
+    <string name="alarm_add">Ajouter une alarme</string>
+    <string name="alarm">Alarme</string>
+    <string name="add_note_shortcut_short_label">Ajouter une note</string>
+    <string name="add_note_shortcut_long_label">Ajouter une nouvelle note</string>
+    <string name="add_note_shortcut_disabled_label">Indisponible</string>
+    <string name="add_note_fab_title">Ajouter une note</string>
+    <string name="add_list_shortcut_short_label">Ajouter une liste</string>
+    <string name="add_list_shortcut_long_label">Ajouter une nouvelle liste</string>
+    <string name="add_list_shortcut_disabled_label">Indisponible</string>
+    <string name="add_list_fab_title">Ajouter une liste</string>
+    <string name="activity_add_list_title">Titre</string>
+    <string name="activity_add_list_add_item">Item</string>
+    <string name="activity_add_note_note">Note</string>
+    <string name="home_viewpager_notes">Notes</string>
+    <string name="should_accept_permissions">Vous devez accepter les permissions pour vous connecter</string>
+    <string name="provide_valid_date_time">Fournissez une date et une heure valide</string>
+    <string name="page_title_settings">Paramètres</string>
+    <string name="home_viewpager_lists">Listes</string>
+    <string name="home_viewpager_all">Tout</string>
+    <string name="google_signin">Se connecter</string>
+    <string name="edit_note_title">Editer une note</string>
+    <string name="edit_list_title">Editer une liste</string>
+    <string name="drive_fail_save_data">Echec lors de la sauvegarde des données</string>
+    <string name="drive_fail_get_data">Echec lors de la récupération des données</string>
+    <string name="drive_fail_connect">Impossible de résoudre la connexion</string>
+    <string name="delete_note_title">Supprimer la note</string>
+    <string name="delete_note_message">Êtes vous sur de vouloir supprimer cette note ?</string>
+    <string name="delete_list_title">Supprimer la liste</string>
+    <string name="delete_list_message">Êtes vous sur de vouloir supprimer cette liste ?</string>
+    <string name="delete_due_date_title">Supprimer l\'alarme</string>
+    <string name="delete_due_date_message">Êtes vous sur de vouloir supprimer l\'alarme : %s</string>
+    <string name="cannot_update_empty_list">Impossible de mettre à jour la liste sans titre</string>
+    <string name="cannot_create_empty_list">Impossible de créer la liste sans titre</string>
+    <string name="cannot_create_empty_note">Impossible de créer une note vide</string>
+    <string name="cannot_update_empty_note">Impossible de mettre à jour une note vide</string>
+    <string name="cannot_edit">Impossible d\'éditer ici</string>
+    <string name="add_note_title">Ajouter une note</string>
+    <string name="add_list_title">Ajouter une liste</string>
+    <string name="load">Chargement...</string>
+</resources>

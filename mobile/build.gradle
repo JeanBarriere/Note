@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        jean {
+            keyAlias 'jean'
+            keyPassword ''
+            storeFile file('/home/jean/Android/jean.jks')
+            storePassword ''
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "fr.jean_barriere.note"
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion 19
+        targetSdkVersion 19
+        versionCode 2
+        versionName "1.0.1.nyrii"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.jean
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    wearApp project(':wear')
+    compile('com.mikepenz:materialdrawer:5.8.1@aar') {
+        transitive = true
+    }
+    compile('com.github.florent37:materialviewpager:1.2.0@aar') {
+        transitive = true
+    }
+    compile 'com.github.rengwuxian:MaterialEditText:2.1.4'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.firebase:firebase-core:9.6.0'
+    compile 'com.google.android.gms:play-services-auth:9.6.0'
+    compile 'com.google.android.gms:play-services-drive:9.6.0'
+    compile 'com.google.android.gms:play-services-plus:9.6.0'
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.mikepenz:iconics-core:2.8.2@aar'
+    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.android.support:cardview-v7:25.1.0'
+}
+
+
+apply plugin: 'com.google.gms.google-services'

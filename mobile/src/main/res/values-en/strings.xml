@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Note</string>
+    <string name="space">space</string>
+    <string name="resources_title">Used resources</string>
+    <string name="play_services_error">Service error</string>
+    <string name="options">Options</string>
+    <string name="open_source_title">Open source licences</string>
+    <string name="no_data_available">No notes</string>
+    <string name="delete_item">Delete</string>
+    <string name="close">close</string>
+    <string name="url_unsplash">Daily home picture : <a href="https://source.unsplash.com/">Unsplash</a></string>
+    <string name="alarm_delete">Delete the due date</string>
+    <string name="alarm_add">Add a due date</string>
+    <string name="alarm">Alarm</string>
+    <string name="add_note_shortcut_short_label">Add a note</string>
+    <string name="add_note_shortcut_long_label">Add a new note</string>
+    <string name="add_note_shortcut_disabled_label">Unavailable</string>
+    <string name="add_note_fab_title">Add a note</string>
+    <string name="add_list_shortcut_short_label">Add a list</string>
+    <string name="add_list_shortcut_long_label">Add a new list</string>
+    <string name="add_list_shortcut_disabled_label">Unavailable</string>
+    <string name="add_list_fab_title">Add a list</string>
+    <string name="activity_add_list_title">Title</string>
+    <string name="activity_add_list_add_item">Item</string>
+    <string name="activity_add_note_note">Note</string>
+    <string name="home_viewpager_notes">Notes</string>
+    <string name="should_accept_permissions">You should accept permissions to connect to your account</string>
+    <string name="provide_valid_date_time">Please, make sure to provide a valid date and time</string>
+    <string name="page_title_settings">Settings</string>
+    <string name="home_viewpager_lists">Lists</string>
+    <string name="home_viewpager_all">All</string>
+    <string name="google_signin">Sign in</string>
+    <string name="edit_note_title">Edit note</string>
+    <string name="edit_list_title">Edit list</string>
+    <string name="drive_fail_save_data">Failed to save data on the cloud</string>
+    <string name="drive_fail_get_data">Failed to get data from the cloud</string>
+    <string name="drive_fail_connect">Unable to resolve connection</string>
+    <string name="delete_note_title">Delete the note</string>
+    <string name="delete_note_message">Are you sure you want to delete that note ?</string>
+    <string name="delete_list_title">Delete the list</string>
+    <string name="delete_list_message">Are you sure you want to delete that list ?</string>
+    <string name="delete_due_date_title">Delete the due date</string>
+    <string name="delete_due_date_message">Are you sure you want to delete the due date : %s</string>
+    <string name="cannot_update_empty_list">Cannot update a list without a title</string>
+    <string name="cannot_create_empty_list">Cannot create a list without a title</string>
+    <string name="cannot_create_empty_note">Cannot create an empty note</string>
+    <string name="cannot_update_empty_note">Cannot update an empty note</string>
+    <string name="cannot_edit">Cannot edit from here</string>
+    <string name="add_note_title">Add a note</string>
+    <string name="add_list_title">Add a list</string>
+    <string name="load">Loading...</string>
+</resources>

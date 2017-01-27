@@ -1,0 +1,30 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="addnote"
+        android:enabled="true"
+        android:icon="@drawable/ic_note_add_black"
+        android:shortcutShortLabel="@string/add_note_shortcut_short_label"
+        android:shortcutLongLabel="@string/add_note_shortcut_long_label"
+        android:shortcutDisabledMessage="@string/add_note_shortcut_disabled_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="fr.jean_barriere.note"
+            android:targetClass="fr.jean_barriere.note.activity.AddNoteActivity" />
+        <categories android:name="android.shortcut.addnote" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="addlist"
+        android:enabled="true"
+        android:icon="@drawable/ic_note_add_black"
+        android:shortcutShortLabel="@string/add_list_shortcut_short_label"
+        android:shortcutLongLabel="@string/add_list_shortcut_long_label"
+        android:shortcutDisabledMessage="@string/add_list_shortcut_disabled_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="fr.jean_barriere.note"
+            android:targetClass="fr.jean_barriere.note.activity.AddListActivity" />
+        <categories android:name="android.shortcut.addlist" />
+    </shortcut>
+
+</shortcuts>

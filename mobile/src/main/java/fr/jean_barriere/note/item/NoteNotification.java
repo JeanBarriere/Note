@@ -24,7 +24,8 @@ import fr.jean_barriere.note.notification.NotificationPublisher;
 
 public class NoteNotification implements Serializable {
     private String content;
-    private final Integer id;
+    private final Integer uid;
+    private final String id;
     private Long delay;
     private String parentId;
 
@@ -33,7 +34,8 @@ public class NoteNotification implements Serializable {
         this.delay = delay;
         UUID uuid = UUID.randomUUID();
         this.parentId = parentId;
-        this.id = (int)(uuid.getMostSignificantBits() + uuid.getLeastSignificantBits());
+        this.uid = (int)(uuid.getMostSignificantBits() + uuid.getLeastSignificantBits());
+        this.id = uuid.toString();
     }
 
     public static Notification build(String notificationContent) {
@@ -46,28 +48,29 @@ public class NoteNotification implements Serializable {
 
     public void schedule() {
         Intent notificationIntent = new Intent(NoteApp.getContext(), NotificationPublisher.class);
-        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, id);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, uid);
         notificationIntent.putExtra(NotificationPublisher.PARENT_ID, parentId);
         notificationIntent.putExtra(NotificationPublisher.CONTENT, content);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(NoteApp.getContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        long futureInMillis = Calendar.getInstance().getTimeInMillis() + delay;
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
         AlarmManager alarmManager = (AlarmManager)NoteApp.getContext().getSystemService(Context.ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, futureInMillis, pendingIntent);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
     }
 
     public void cancel() {
         Intent notificationIntent = new Intent(NoteApp.getContext(), NotificationPublisher.class);
-        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, id);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, uid);
         notificationIntent.putExtra(NotificationPublisher.PARENT_ID, parentId);
         notificationIntent.putExtra(NotificationPublisher.CONTENT, content);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(NoteApp.getContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager alarmManager = (AlarmManager)NoteApp.getContext().getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
+        pendingIntent.cancel();
     }
 
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -83,6 +86,6 @@ public class NoteNotification implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        return (obj != null && ((obj instanceof Integer && this.id == obj) || (obj instanceof NoteNotification && this.id == ((NoteNotification)obj).getId())));
+        return (obj != null && ((obj instanceof Integer && this.id == obj) || (obj instanceof NoteNotification && this.id.equals(((NoteNotification)obj).getId()))));
     }
 }

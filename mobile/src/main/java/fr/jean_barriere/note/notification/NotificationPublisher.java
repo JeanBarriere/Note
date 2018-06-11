@@ -12,6 +12,8 @@ import fr.jean_barriere.note.R;
 import fr.jean_barriere.note.activity.EditListActivity;
 import fr.jean_barriere.note.activity.EditNoteActivity;
 import fr.jean_barriere.note.item.Item;
+import fr.jean_barriere.note.item.List;
+import fr.jean_barriere.note.item.Note;
 import fr.jean_barriere.note.manager.DataManager;
 
 /*
@@ -33,26 +35,28 @@ public class NotificationPublisher extends BroadcastReceiver {
         String parentId = intent.getStringExtra(PARENT_ID);
         String content = intent.getStringExtra(CONTENT);
 
-        Notification.Builder builder = new Notification.Builder(NoteApp.getContext());
+        Notification.Builder builder = new Notification.Builder(context);
 
         builder.setContentTitle(NoteApp.getContext().getString(R.string.app_name));
         builder.setContentText(content);
         builder.setSmallIcon(R.drawable.ic_launcher_white);
 
         Item parent = DataManager.getItemFromId(parentId);
-        System.out.println("parent = " + parent);
+        if (parent != null)
+            parent.removeDueDate();
         if (parent != null && parent.getType().equals(Item.Type.NOTE)) {
-            Intent contentIntent = new Intent(NoteApp.getContext(), EditNoteActivity.class);
+            Intent contentIntent = new Intent(context, EditNoteActivity.class);
             contentIntent.putExtra("note", parent);
             contentIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            builder.setContentIntent(PendingIntent.getActivity(NoteApp.getContext(), 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            builder.setContentIntent(PendingIntent.getActivity(context, 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            DataManager.saveNote((Note)parent);
         } else if (parent != null && parent.getType().equals(Item.Type.LIST)) {
-            Intent contentIntent = new Intent(NoteApp.getContext(), EditListActivity.class);
+            Intent contentIntent = new Intent(context, EditListActivity.class);
             contentIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             contentIntent.putExtra("list", parent);
-            builder.setContentIntent(PendingIntent.getActivity(NoteApp.getContext(), 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            builder.setContentIntent(PendingIntent.getActivity(context, 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            DataManager.saveList((List)parent);
         }
-
         notificationManager.notify(id, builder.build());
     }
 }

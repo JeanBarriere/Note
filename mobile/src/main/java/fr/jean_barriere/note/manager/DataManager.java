@@ -153,9 +153,9 @@ public class DataManager {
     }
 
     public static void notifiyMainActivity() {
-        if (activities != null)
-            for (MainActivity activity : activities)
-                activity.updateDrive();
+//        if (activities != null)
+//            for (MainActivity activity : activities)
+//                activity.updateDrive();
     }
 
 

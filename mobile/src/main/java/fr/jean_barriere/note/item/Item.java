@@ -92,8 +92,9 @@ public abstract class Item implements Serializable {
     }
 
     public Calendar getDueDate() {
-        if (dueDate != null && dueDate.before(Calendar.getInstance()))
-            removeDueDate();
+        if (dueDate != null && dueDate.before(Calendar.getInstance())) {
+            return null;
+        }
         return dueDate;
     }
 
@@ -103,7 +104,7 @@ public abstract class Item implements Serializable {
 
     public boolean isReminder() {
         if (dueDate != null && dueDate.before(Calendar.getInstance()))
-            removeDueDate();
+            return false;
         return reminder;
     }
 

@@ -281,18 +281,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 }
                 break;
             case REQUEST_REFRESH_NOTE:
-                if (resultCode == RESULT_OK && DataManager.isGoogleAccountLinked())
+                if (resultCode == RESULT_OK && DataManager.isGoogleAccountLinked()) {
                     Drive.DriveApi.getAppFolder(mGoogleApiClient).listChildren(mGoogleApiClient).setResultCallback(updateDriveCallback);
-                else if (DataManager.isGoogleAccountLinked())
-                    Drive.DriveApi.getAppFolder(mGoogleApiClient).listChildren(mGoogleApiClient).setResultCallback(connectDriveCallback);
-                materialViewPager.getViewPager().getAdapter().notifyDataSetChanged();
+                    materialViewPager.getViewPager().getAdapter().notifyDataSetChanged();
+                }
                 break;
             case REQUEST_REFRESH_LIST:
-                if (resultCode == RESULT_OK && DataManager.isGoogleAccountLinked())
+                if (resultCode == RESULT_OK && DataManager.isGoogleAccountLinked()) {
                     Drive.DriveApi.getAppFolder(mGoogleApiClient).listChildren(mGoogleApiClient).setResultCallback(updateDriveCallback);
-                else if (DataManager.isGoogleAccountLinked())
-                    Drive.DriveApi.getAppFolder(mGoogleApiClient).listChildren(mGoogleApiClient).setResultCallback(connectDriveCallback);
-                materialViewPager.getViewPager().getAdapter().notifyDataSetChanged();
+                    materialViewPager.getViewPager().getAdapter().notifyDataSetChanged();
+                }
+                break;
         }
     }
 

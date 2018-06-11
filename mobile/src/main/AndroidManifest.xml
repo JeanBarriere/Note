@@ -32,16 +32,16 @@
             android:name=".activity.EditNoteActivity"
             android:label="@string/title_activity_edit_note"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.EditListActivity"
             android:label="@string/title_activity_edit_list"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <receiver android:name=".notification.NotificationPublisher" />
 
-        <activity android:name=".activity.SettingsActivity"></activity>
+        <activity android:name=".activity.SettingsActivity" />
     </application>
 
 </manifest>
